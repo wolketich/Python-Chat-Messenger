@@ -32,12 +32,12 @@ def Connection():
 
     global choice_Entry
     choice_Entry = tk.Entry(connect_windo, textvariable=choiceVar, font=('calibre', 10, 'normal'))
-    startImage = tk.PhotoImage(file='st.png')
+    # startImage = tk.PhotoImage(file='st.png')
     choice_label.grid(row=2, column=0)
     choice_Entry.grid(row=2, column=1)
     #binding enter
     connect_windo.bind('<Return>', lambda event=None: StartSystem())
-    sub_btn = tk.Button(connect_windo, text="Submit", image=startImage,command=StartSystem,padx=70)
+    sub_btn = tk.Button(connect_windo, text="Submit",command=StartSystem,padx=70)
     sub_btn.grid(row=4, column=1)
     connect_windo.mainloop()
 
@@ -79,8 +79,8 @@ root=tk.Tk()
 # setting window size
 root.geometry("600x400")
 root.title('WeChat()-New Window')
-image = tk.PhotoImage(file='logo.png')
-root.iconphoto(False,image)
+# image = tk.PhotoImage(file='logo.png')
+# root.iconphoto(False,image)
 
 def send_Msg():
     msg = msgVar.get()
@@ -111,7 +111,7 @@ Mymsgdisp.grid(row=2,column=1)
 frndmsg.grid(row=3,column=0)
 frndmsgdisp.grid(row=3,column=1)
 root.bind('<Return>', lambda event=None: send_Msg())
-sendImage = tk.PhotoImage(file='sendmsg.png')
-Send_Msg=tk.Button(root,text= 'Send', command = send_Msg,image=sendImage,padx=70).grid(row=5,column=1)
+# sendImage = tk.PhotoImage(file='sendmsg.png')
+Send_Msg=tk.Button(root,text= 'Send', command = send_Msg,padx=70).grid(row=5,column=1)
 
 root.mainloop()
